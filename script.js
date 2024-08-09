@@ -21,6 +21,16 @@ let score = [0, 0];
 
 dice.classList.add('hidden');
 
+const switchPlayer = function () {
+  document.querySelector(`.player--${activePlayer}`);
+
+  document.getElementById(`current--${activePlayer}`).textContent = 0;
+  currentScore = 0;
+  activePlayer = activePlayer === 0 ? 1 : 0;
+  player0El.classList.toggle('player--active');
+  player1El.classList.toggle('player--active');
+};
+
 btnRoll.addEventListener('click', function () {
   const randomDice = Math.trunc(Math.random() * 6) + 1;
   console.log(randomDice);
@@ -45,4 +55,12 @@ btnHold.addEventListener('click', function () {
 
   document.getElementById(`score--${activePlayer}`).textContent =
     score[activePlayer];
+
+  if (score[activePlayer] >= 20) {
+    document
+      .querySelector(`.player--${activePlayer}`)
+      .classList.add('player--winner');
+  } else {
+    switchPlayer();
+  }
 });
