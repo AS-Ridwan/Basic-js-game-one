@@ -17,6 +17,7 @@ score1El.textContent = 0;
 
 let activePlayer = 0;
 let currentScore = 0;
+let score = [0, 0];
 
 dice.classList.add('hidden');
 
@@ -37,4 +38,11 @@ btnRoll.addEventListener('click', function () {
     player0El.classList.toggle('player--active');
     player1El.classList.toggle('player--active');
   }
+});
+
+btnHold.addEventListener('click', function () {
+  score[activePlayer] = score[activePlayer] + currentScore;
+
+  document.getElementById(`score--${activePlayer}`).textContent =
+    score[activePlayer];
 });
