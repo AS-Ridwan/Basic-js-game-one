@@ -31,6 +31,7 @@ const switchPlayer = function () {
   player1El.classList.toggle('player--active');
 };
 
+// Roll Dice BTN Event Function
 btnRoll.addEventListener('click', function () {
   const randomDice = Math.trunc(Math.random() * 6) + 1;
   console.log(randomDice);
@@ -50,6 +51,7 @@ btnRoll.addEventListener('click', function () {
   }
 });
 
+// Hold BTN Event Function
 btnHold.addEventListener('click', function () {
   score[activePlayer] = score[activePlayer] + currentScore;
 
@@ -64,3 +66,6 @@ btnHold.addEventListener('click', function () {
     switchPlayer();
   }
 });
+
+// BTN New Game  Event Function
+btnNew.addEventListener('click', function () {});
