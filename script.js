@@ -14,6 +14,7 @@ const btnHold = document.querySelector('.btn--hold');
 
 let activePlayer, currentScore, score, isPlaying;
 
+// init function
 const init = function () {
   score0El.textContent = 0;
   score1El.textContent = 0;
@@ -86,5 +87,7 @@ btnHold.addEventListener('click', function () {
   }
 });
 
-// BTN New Game  Event Function
+// BTN load New Game  Event Function
 btnNew.addEventListener('click', init);
+
+// game work done
